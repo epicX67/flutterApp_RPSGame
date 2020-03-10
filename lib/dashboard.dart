@@ -1,7 +1,5 @@
 import 'dart:ui';
 import 'dart:math';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePageInit extends StatefulWidget{
@@ -83,13 +81,22 @@ class _HomePage extends State<HomePageInit>{
   }
   playerwin(){
     showDialog(
+        barrierDismissible: false,
         context: context,
         builder: (BuildContext context){
           return AlertDialog(
-            title: Text('Pepe reeeeeeeeeeeeeeeeee'),
+            title: Text('Wew'),
             content: Text('You Won'),
+
             actions: <Widget>[
-              FlatButton(onPressed: (){Navigator.of(context).pop();}, child: Text('Ok')),
+              FlatButton(
+                  onPressed: (){
+                    setState(() {
+                      score=0;
+                    });
+                    Navigator.of(context).pop();
+                    },
+                  child: Text('Ok')),
             ],
           );
         }
